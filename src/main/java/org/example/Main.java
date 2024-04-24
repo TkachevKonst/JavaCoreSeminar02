@@ -243,9 +243,13 @@ public class Main {
     static boolean checkAiMove(char dot1, char dot2, int win){
         for (int i = 0; i < fieldSizeX; i++) {
             for (int j = 0; j < fieldSizeY; j++) {
-                if((checkHorizonVertical(i,j,dot1,win-1)||checkDiagonal(i,j,dot1,win-1)) && isCellEmpty(i,j)){
-                    field[i][j]=dot2;
-                    return false;
+                if(isCellEmpty(i,j)){
+                    field[i][j]=dot1;
+                    if (checWin(dot1, win-1)){
+                        field[i][j] = dot2;
+                        return false;
+                    }
+                    field[i][j] = DOT_EMPTY;
                 }
             }
         }
