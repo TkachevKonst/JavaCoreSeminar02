@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -260,24 +261,21 @@ public class Main {
                     }
                     field[i][j] = DOT_EMPTY;
                 }
-
             }
         }
+        for (int i = 0; i < fieldSizeX; i++) {
+            for (int j = 0; j < fieldSizeY; j++) {
+                if (isCellEmpty(i, j)) {
+                    field[i][j] = dot1;
+                    if (checWin(dot1, win - 1)) {
+                        field[i][j] = dot2;
+                        return false;
 
-            for (int i = 0; i < fieldSizeX; i++) {
-                for (int j = 0; j < fieldSizeY; j++) {
-                    if (isCellEmpty(i, j)) {
-                        field[i][j] = dot1;
-                        if (checWin(dot1, win - 1)) {
-                            field[i][j] = dot2;
-                            return false;
-                        }
-                        field[i][j] = DOT_EMPTY;
                     }
-
+                    field[i][j] = DOT_EMPTY;
                 }
             }
-
+        }
         return true;
     }
 }
