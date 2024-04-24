@@ -240,6 +240,13 @@ public class Main {
         return false;
     }
 
+    /**
+     * доработка ходов компьютера (мешает человеку выиграть)
+     * @param dot1
+     * @param dot2
+     * @param win
+     * @return
+     */
     static boolean checkAiMove(char dot1, char dot2, int win){
         for (int i = 0; i < fieldSizeX; i++) {
             for (int j = 0; j < fieldSizeY; j++) {
