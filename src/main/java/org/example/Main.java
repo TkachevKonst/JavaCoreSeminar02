@@ -263,7 +263,7 @@ public class Main {
 
             }
         }
-        if (!checWin(dot1, win)) {
+
             for (int i = 0; i < fieldSizeX; i++) {
                 for (int j = 0; j < fieldSizeY; j++) {
                     if (isCellEmpty(i, j)) {
@@ -277,7 +277,7 @@ public class Main {
 
                 }
             }
-        }
+
         return true;
     }
 }
